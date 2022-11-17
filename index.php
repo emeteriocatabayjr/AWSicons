@@ -35,7 +35,7 @@
       while ($data = mysqli_fetch_assoc($result)) {
       ?>
          <button class="tablinks" onclick="openCategory(event, '<?php echo $data['name']; ?>')">
-            <img src="assets/icons/Category-Icons/Arch-Category_32/<?php echo $data['filename']; ?>" data-toggle="tooltip" title="<?php echo $data['name']; ?>">
+            <img src="<?php echo $data['path']; ?>" data-toggle="tooltip" title="<?php echo $data['name']; ?>">
          </button>
       <?php
       }
