@@ -17,6 +17,18 @@
 <body>
    <div class="jumbotron jumbotron-fluid text-center">
       <h2>AWSicons</h2>
+      <?php
+      $query = "SELECT COUNT(iconID) as iconCount FROM tbl_architecture_service_icons";
+      $result = mysqli_query($connect, $query);
+      if ($result) {
+         $row = mysqli_fetch_assoc($result);
+         $iconCount = $row['iconCount'];
+         echo "<p>Total Icons: $iconCount</p>";
+      } else {
+         echo "<p>Error executing the query: " . mysqli_error($connect) . "</p>";
+      }
+
+      ?>
    </div>
    <!--
    <form method="POST" enctype="multipart/form-data" action="upload.php">
